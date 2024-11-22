@@ -1,0 +1,457 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: rgb(233, 228, 193);
+    font-family: 'Orbitron', sans-serif;
+  }
+
+
+  /* Header styles */
+  header {
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 34px;
+    margin-left: 30px;
+    color: rgb(38, 38, 57);   
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 100px;
+    margin-right: 50px;
+    color: rgb(38, 38, 57);   
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 34px;
+    
+  }
+
+.p1 {
+    font-weight: bold;
+    color: #312164;
+    font-size: 40px;
+    font-family: 'Playfair Display', Georgia, serif;
+
+}
+  /* Circle styles */
+.circle {
+  position: absolute;
+  left: 50px; /* Distance from the left side of the screen */
+  width: 160px;
+  height: 160px;
+  background-color: rgb(82, 82, 139);
+  border-radius: 50%; /* Makes the div a perfect circle */
+  /* Center text inside the circles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Reset padding/margins to avoid shifting */
+  padding: 0;
+  margin: 0;
+  
+  /* Font styling */
+  font-size: 80px; /* Font size for letters */
+  color: rgb(17, 17, 78);
+  font-weight: bold;
+  text-align: center; 
+}
+
+.circle-1 {
+    top: 100px; /* Position the first circle */
+}
+  
+.circle-2 {
+    top: 250px; /* 200px below the first circle */
+}
+  
+.circle-3 {
+    top: 400px; /* 200px below the second circle */
+}
+  
+.circle-4 {
+    top: 550px; /* 200px below the third circle */
+}
+
+/* Oval frame for the picture */
+.frame {
+    position: absolute;
+    top: 55%;
+    left: 39%;
+    transform: translate(-50%, -50%); /* Center the frame */
+    width: 390px;
+    height: 550px;
+    border: 18px solid rgb(247, 247, 247); /* Frame border */
+    border-radius: 60% / 60%; /* Oval shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the image fits inside the oval */
+    
+}
+  
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+    border-radius: 50% / 60%; /* Makes the image itself an oval */
+}
+
+/* Sparkle shape */
+.sparkle {
+    position: absolute; /* Position it anywhere on the screen */
+    top: 25%;
+    left: 46.5%;
+    width: 48px;
+    height: 48px;
+    background: rgb(38, 38, 57);
+    overflow: hidden;
+    z-index: 2;
+    border-bottom: 30px solid rgb(38, 38, 57); /* Bottom triangle */
+    transform: rotate(45deg); /* Rotate to form a diamond shape */
+    animation: sparkle 1.5s infinite; /* Sparkle effect */
+}
+
+.sparkle2 {
+    top: 23%; /* Adjust the vertical position for the second sparkle */
+    left: 49%; /* Adjust the horizontal position for the second sparkle */
+    width: 40px;
+    height: 40px;
+    background: rgb(82, 82, 139);
+    border-bottom: 30px solid rgb(82, 82, 139);
+
+}
+
+.sparkle::before, .sparkle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid rgb(38, 38, 57); /* Side triangles */
+}
+
+.sparkle2::before, .sparkle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid rgb(82, 82, 139); /* Side triangles */
+}
+
+.sparkle::before {
+    transform: rotate(90deg); /* Create the top triangle */
+}
+
+.sparkle::after {
+    transform: rotate(-90deg); /* Create the bottom triangle */
+}
+
+/* Animation */
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1) rotate(45deg); /* Start and end at normal size */
+        opacity: 0.8; /* Start and end semi-transparent */
+    }
+    50% {
+        transform: scale(1.2) rotate(45deg); /* Scale up for sparkle effect */
+        opacity: 1; /* Fully opaque at peak */
+    }
+}
+
+/* Container for the intro text */
+.intro-text {
+  position: absolute;
+  top: 145px; /* Position the text below the header */
+  right: 50px; /* Distance from the right side of the screen */
+  width: 40%; /* Adjust the width to fit the space */
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 25px;
+  color: #211d47;
+  line-height: 1.5; /* Space out the text for readability */
+}
+
+
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .intro-text {
+    width: 80%; /* Expand the width on smaller screens */
+    right: 10px; /* Adjust the position */
+    top: 400px; /* Adjust the top position */
+  }
+}
+
+/* Container for the about text */
+.about-text {
+  position: absolute;
+  top: 110px; /* Position the text below the header */
+  right: 47%; /* Distance from the right side of the screen */
+  width: 35%; /* Adjust the width to fit the space */
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px;
+  color: #333;
+  line-height: 1.5; /* Space out the text for readability */
+}
+
+.frame-about {
+  position: absolute;
+  top: 41%;  /* Adjust this for vertical positioning */
+  right: 3%; /* Place it on the right side */
+  transform: translateY(-50%); /* Vertically center the frame */
+  
+  width: 550px;
+  height: 340px;
+  border: 18px solid rgb(247, 247, 247); /* Frame border */
+  border-radius: 60% / 60%; /* Oval shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensures the image fits inside the oval */
+}
+
+/* Profile picture inside the frame */
+.profile-about {
+  width: 550px; /* Full width of the frame */
+  height: auto; /* Keeps the aspect ratio */
+  border-radius: 20px; /* Slightly rounded corners for the image */
+}
+
+
+.frame-about2 {
+  position: absolute;
+  top: 55%;  /* Adjust this for vertical positioning */
+  right: 30%; /* Place it on the right side */
+  transform: translateY(-50%); /* Vertically center the frame */
+  
+  width: 225px;
+  height: 170px;
+  border: 14px solid rgb(247, 247, 247); /* Frame border */
+  border-radius: 60% / 60%; /* Oval shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensures the image fits inside the oval */
+}
+
+/* Profile picture inside the frame */
+.profile-about2 {
+  width: 252px; /* Full width of the frame */
+  height: auto; /* Keeps the aspect ratio */
+  border-radius: 20px; /* Slightly rounded corners for the image */
+}
+
+
+.sparkle3 {
+  top: 23%; /* Adjust the vertical position for the second sparkle */
+  left: 93%; /* Adjust the horizontal position for the second sparkle */
+  width: 40px;
+  height: 40px;
+  background: rgb(82, 82, 139);
+  border-bottom: 30px solid rgb(82, 82, 139);
+
+}
+
+
+.sparkle3::before, .sparkle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid rgb(82, 82, 139); /* Side triangles */
+}
+
+
+/* Sparkle shape */
+.sparkle4 {
+  top: 24%;
+  left: 91%;
+}
+
+
+.sparkle4::before, .sparkle::after {
+  top: 50%;
+  left: 50%;
+ 
+}
+
+/* List-section container */
+.list-section {
+  display: flex;
+  position: absolute;
+  left: 20%;
+  flex-direction: column;
+  margin: 40px auto;
+  width: 80%;
+  gap: 30px; /* Space between items */
+}
+
+/* Each item in the list */
+.item {
+  display: flex;
+  align-items: center; /* Align image and text vertically */
+  gap: 20px; /* Space between the image and the text */
+}
+
+/* Style for the video */
+.item-video {
+  width: 500px; /* Adjust the size as needed */
+  height: auto;
+  border-radius: 10px; /* Optional: Rounds the corners of the video */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
+}
+
+/* Style for the paragraph */
+.item-text {
+  width: 650px;
+  font-size: 21px;
+  line-height: 1.5;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.icons-container {
+  position: absolute;
+  right: 10%;
+  bottom: 17%;
+  display: flex;
+  gap: 65px;
+  justify-content: center;  /* Aligns the icons horizontally */
+  margin-top: 20px;         /* Adds some space above the icons */
+}
+
+.icon {
+  width: 60px;              /* Adjust the size of your icons */
+  height: auto;             /* Maintain aspect ratio */
+  margin: 0 10px;           /* Adds space between the icons */
+}
+
+.main-container {
+  position: relative;
+  left: 8%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.resume-container {
+  width: 55%;
+}
+
+h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #3d3d3d;
+}
+
+h1 {
+  
+  margin-bottom: 20px;
+}
+
+.h1aboutme {
+  text-align: center;
+}
+
+.resume-section {
+  margin-bottom: 30px;
+}
+
+.resume-section h2 {
+  border-bottom: 2px solid #555;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.resume-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume-section ul li {
+  background: #ffffff96;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+}
+
+a {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.pdf-viewer {
+
+  text-align: center;
+  }
+
+.custom-pdf {
+  border: none; /* Remove default border */
+  border-radius: 12px; /* Match iframe's rounded corners */
+  overflow: hidden; /* Prevent overflow of content */
+}
+
+.resume-section h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.resume-section {
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+a.download-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: rgb(82, 82, 139);
+  color: #fff; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded button corners */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+a.download-link:hover {
+  background-color: #005f8a;
+}

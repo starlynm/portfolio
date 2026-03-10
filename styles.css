@@ -329,6 +329,14 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
 }
 
+/* Style for the Power BI image */
+.item-image {
+  width: 500px; /* Same width as the video */
+  height: auto;
+  border-radius: 10px; /* Same rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Same shadow effect */
+}
+
 /* Style for the paragraph */
 .item-text {
   width: 650px;
@@ -455,3 +463,4 @@ a.download-link {
 a.download-link:hover {
   background-color: #005f8a;
 }
+
